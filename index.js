@@ -9,7 +9,7 @@ app.listen((process.env.PORT || 3000));
 
 //server frontpage
 app.get('/', function(req, res) {
-  res.send('This is Guitar Noize Bot Server');
+  res.send('This is the Bloomer Bot Server');
 });
 
 // Facebook webhook
