@@ -51,5 +51,3 @@ function sendMessage(recipientId, message) {
     }
   });
 };
-
-//https://whispering-savannah-31852.herokuapp.com/
