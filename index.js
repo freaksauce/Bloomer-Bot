@@ -107,6 +107,10 @@ function receivedMessage(event) {
   }
 }
 
+function receivedDeliveryConfirmation(messagingEvent) {
+  console.log('messagingEvent: ', messagingEvent);
+}
+
 function sendTextMessage(recipientId, messageText) {
   var messageData = {
     recipient: {
