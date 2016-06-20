@@ -177,6 +177,8 @@ function receivedMessage(event) {
       sendNews(senderID, techNews);
     }else if (messageText.indexOf('celeb') !== -1) {
       sendNews(senderID, celebNews);
+    }else if (messageText.indexOf('food') !== -1) {
+      sendNews(senderID, foodNews);
     }else{
       sendTextMessage(senderID, messageText);
     }
