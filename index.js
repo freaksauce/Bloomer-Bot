@@ -35,14 +35,14 @@ var techNews = [{
 }];
 
 var celebNews = [{
-  title: "",
-  subtitle: "",
-  item_url: "",
-  image_url: "",
+  title: "Miley Cyrus Confirms Relationship In New Photo",
+  subtitle: "Miley Cyrus just made a pretty clear statement about her relationship with Liam Hemsworth",
+  item_url: "http://www.newidea.com.au/article/celebrityroyals/miley-cyrus-confirms-relationship-in-new-photo",
+  image_url: "http://www.newidea.com.au/media/2942/mileygettyimages-147240663.jpg?width=823",
   buttons: [{
       type: "web_url",
-      url: "",
-      title: ""
+      url: "http://www.newidea.com.au/article/celebrityroyals/miley-cyrus-confirms-relationship-in-new-photo",
+      title: "Open Web URL"
   }]
 }];
 
