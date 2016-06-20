@@ -3,8 +3,49 @@ var app = express();
 var bodyParser = require('body-parser');
 var request = require('request');
 
-var newsJSON = require('./news.json');
-console.log(newsJSON.techNews);
+
+var techNews = {
+  title: "rift",
+  subtitle: "Next-generation virtual reality",
+  item_url: "https://www.oculus.com/en-us/rift/",
+  image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+  buttons: [{
+    type: "web_url",
+    url: "https://www.oculus.com/en-us/rift/",
+    title: "Open Web URL"
+  }, {
+    type: "postback",
+    title: "Call Postback",
+    payload: "Payload for first bubble",
+  }],
+}, {
+  title: "touch",
+  subtitle: "Your Hands, Now in VR",
+  item_url: "https://www.oculus.com/en-us/touch/",
+  image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+  buttons: [{
+    type: "web_url",
+    url: "https://www.oculus.com/en-us/touch/",
+    title: "Open Web URL"
+  }, {
+    type: "postback",
+    title: "Call Postback",
+    payload: "Payload for second bubble",
+  }]
+}
+
+var celebNews = {
+  title: "",
+  subtitle: "",
+  item_url: "",
+  image_url: "",
+  buttons: [{
+      type: "web_url",
+      url: "",
+      title: ""
+  }]
+}
+
 
 app.use(bodyParser.json());
 
@@ -81,9 +122,9 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     if (messageText.indexOf('tech') !== -1) {
-      sendNews(senderID, 'newsJSON.techNews');
+      sendNews(senderID, 'techNews');
     }else if (messageText.indexOf('celeb') !== -1) {
-      sendNews(senderID, 'newsJSON.celebNews');
+      sendNews(senderID, 'celebNews');
     }else{
       sendTextMessage(senderID, messageText);
     }
