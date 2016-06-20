@@ -169,7 +169,7 @@ function callSendAPI(messageData) {
   });
 }
 
-function sendTechNews(recipientId, newsCat) {
+function sendNews(recipientId, newsCat) {
   var messageData = {
     recipient: {
       id: recipientId
