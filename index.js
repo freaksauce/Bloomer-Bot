@@ -3,6 +3,9 @@ var app = express();
 var bodyParser = require('body-parser');
 var request = require('request');
 
+var newsJSON = require('./news.json');
+console.log(newsJSON.techNews);
+
 app.use(bodyParser.json());
 
 app.set('port', (process.env.PORT || 5000));
@@ -77,12 +80,14 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
-    if (messageText.indexOf('news') !== -1) {
-      sendGenericMessage(senderID);
+    if (messageText.indexOf('tech') !== -1) {
+      sendNews(senderID, 'newsJSON.techNews');
+    }else if (messageText.indexOf('celeb') !== -1) {
+      sendNews(senderID, 'newsJSON.celebNews');
     }else{
       sendTextMessage(senderID, messageText);
     }
-      
+
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
   }
@@ -123,7 +128,7 @@ function callSendAPI(messageData) {
   });
 }
 
-function sendGenericMessage(recipientId) {
+function sendTechNews(recipientId, newsCat) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -133,35 +138,7 @@ function sendGenericMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "generic",
-          elements: [{
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
-            buttons: [{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
-            }],
-          }, {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",
-            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
-            buttons: [{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for second bubble",
-            }]
-          }]
+          elements: [newsCat]
         }
       }
     }
