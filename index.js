@@ -34,15 +34,67 @@ var techNews = [{
   }]
 }];
 
-var celebNews = [{
-  title: "Miley Cyrus Confirms Relationship In New Photo",
-  subtitle: "Miley Cyrus just made a pretty clear statement about her relationship with Liam Hemsworth",
-  item_url: "http://www.newidea.com.au/article/celebrityroyals/miley-cyrus-confirms-relationship-in-new-photo",
-  image_url: "http://www.newidea.com.au/media/2942/mileygettyimages-147240663.jpg?width=823",
+var celebNews = [
+  {
+    title: "Miley Cyrus Confirms Relationship In New Photo",
+    subtitle: "Miley Cyrus just made a pretty clear statement about her relationship with Liam Hemsworth",
+    item_url: "http://www.newidea.com.au/article/celebrityroyals/miley-cyrus-confirms-relationship-in-new-photo",
+    image_url: "http://www.newidea.com.au/media/2942/mileygettyimages-147240663.jpg?width=823",
+    buttons: [{
+        type: "web_url",
+        url: "http://www.newidea.com.au/article/celebrityroyals/miley-cyrus-confirms-relationship-in-new-photo",
+        title: "Open Web URL"
+    }]
+  }, {
+    title: "Home And Away: The Morgan Shock Secret Revealed",
+    subtitle: "The shocking truth is going to take fans by surprise!",
+    item_url: "http://www.newidea.com.au/article/celebrityroyals/home-and-away-the-morgan-shock-secret-revealed",
+    image_url: "http://www.newidea.com.au/media/2937/the-morgan-brothers.jpg?width=823",
+    buttons: [{
+        type: "web_url",
+        url: "http://www.newidea.com.au/article/celebrityroyals/home-and-away-the-morgan-shock-secret-revealed",
+        title: "Open Web URL"
+    }]
+  }, {
+    title: "Justin Bieber Falls Mid-Performance In Canada",
+    subtitle: "Good thing I’m like a cat and landed on my feet.",
+    item_url: "http://www.newidea.com.au/article/celebrityroyals/justin-bieber-falls-mid-performance-in-canada",
+    image_url: "http://www.newidea.com.au/media/2897/160619_bieber.jpg?width=823",
+    buttons: [{
+        type: "web_url",
+        url: "http://www.newidea.com.au/article/celebrityroyals/justin-bieber-falls-mid-performance-in-canada",
+        title: "Open Web URL"
+    }]
+  }
+];
+
+var foodNews = [{
+  title: "Beef And Mushroom Pie With Mushy Peas",
+  subtitle: "Beefy. Tasty. You'll Love it.",
+  item_url: "http://www.newidea.com.au/recipe/food/beef-and-mushroom-pie-with-mushy-peas",
+  image_url: "http://www.newidea.com.au/media/2483/ascreen-shot-2016-06-10-at-102821-am-copy.png?width=823",
   buttons: [{
-      type: "web_url",
-      url: "http://www.newidea.com.au/article/celebrityroyals/miley-cyrus-confirms-relationship-in-new-photo",
-      title: "Open Web URL"
+    type: "web_url",
+    url: "http://www.newidea.com.au/recipe/food/beef-and-mushroom-pie-with-mushy-peas",
+    title: "Open Web URL"
+  }, {
+    type: "postback",
+    title: "Call Postback",
+    payload: "Payload for first bubble",
+  }],
+}, {
+  title: "Chicken Pot Pie",
+  subtitle: "This is a delicious winter warmer",
+  item_url: "http://www.newidea.com.au/recipe/food/chicken-pot-pie",
+  image_url: "http://www.newidea.com.au/media/2348/bscreen-shot-2016-06-09-at-103737-am-copy.png?width=823",
+  buttons: [{
+    type: "web_url",
+    url: "http://www.newidea.com.au/recipe/food/chicken-pot-pie",
+    title: "Open Web URL"
+  }, {
+    type: "postback",
+    title: "Call Postback",
+    payload: "Payload for second bubble",
   }]
 }];
 
