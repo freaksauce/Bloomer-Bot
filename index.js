@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 
 
-var techNews = {
+var techNews = [{
   title: "rift",
   subtitle: "Next-generation virtual reality",
   item_url: "https://www.oculus.com/en-us/rift/",
@@ -32,9 +32,9 @@ var techNews = {
     title: "Call Postback",
     payload: "Payload for second bubble",
   }]
-}
+}];
 
-var celebNews = {
+var celebNews = [{
   title: "",
   subtitle: "",
   item_url: "",
@@ -44,7 +44,7 @@ var celebNews = {
       url: "",
       title: ""
   }]
-}
+}];
 
 
 app.use(bodyParser.json());
@@ -179,7 +179,7 @@ function sendTechNews(recipientId, newsCat) {
         type: "template",
         payload: {
           template_type: "generic",
-          elements: [newsCat]
+          elements: newsCat
         }
       }
     }
