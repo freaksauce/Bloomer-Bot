@@ -184,6 +184,10 @@ function sendGenericMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+function receivedDeliveryConfirmation(event) {
+  console.log('receivedDeliveryConfirmation:',event);
+}
+
 function receivedPostback(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
