@@ -122,9 +122,9 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     if (messageText.indexOf('tech') !== -1) {
-      sendNews(senderID, 'techNews');
+      sendNews(senderID, techNews);
     }else if (messageText.indexOf('celeb') !== -1) {
-      sendNews(senderID, 'celebNews');
+      sendNews(senderID, celebNews);
     }else{
       sendTextMessage(senderID, messageText);
     }
