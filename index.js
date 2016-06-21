@@ -269,7 +269,7 @@ function receivedPostback(event) {
     }
     // When a postback is called, we'll send a message back to the sender to
     // let them know it was successful
-    sendTextMessage(userMessage);
+    sendTextMessage(senderID, userMessage);
   })
 
   // The 'payload' param is a developer-defined field which is set in a postback
