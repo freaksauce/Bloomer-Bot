@@ -256,8 +256,8 @@ function receivedPostback(event) {
   var timeOfPostback = event.timestamp;
   var userMessage = 'Thanks for the click!';
   // get user info
-  // curl -X GET "https://graph.facebook.com/v2.6/1126371067434557?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD"
-  request("https://graph.facebook.com/v2.6/"+senderID+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD", function(error, response, body) {
+  var api_url = "https://graph.facebook.com/v2.6/"+senderID+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD"; 
+  request(api_url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var bodyObj = JSON.parse(body);
       userMessage = 'Thanks '+bodyObj.first_name+' '+bodyObj.last_name;
