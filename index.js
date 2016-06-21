@@ -260,7 +260,7 @@ function receivedPostback(event) {
   request.post('https://graph.facebook.com/v2.6/',
                 {access_token: app.get('page_access_token'),
                 fields: 'first_name,last_name,profile_pic'},
-                function(err, response, body) {
+                function(error, response, body) {
                   if (!error && response.statusCode == 200) {
                     console.log(body);
                   } else {
