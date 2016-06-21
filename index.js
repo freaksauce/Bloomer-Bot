@@ -272,9 +272,9 @@ function receivedPostback(event) {
   // });
   request
     .get("https://graph.facebook.com/v2.6/"+senderID+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD")
-    .on('response', function(response) {
-      // console.log(response.statusCode);
-      console.log(response);
+    .on('response', function(error, response, body) {
+      console.log('statusCode:',response.statusCode);
+      console.log(body);
     })
 
   // The 'payload' param is a developer-defined field which is set in a postback
