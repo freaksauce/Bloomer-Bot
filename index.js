@@ -259,10 +259,10 @@ function receivedPostback(event) {
   // curl -X GET "https://graph.facebook.com/v2.6/1126371067434557?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD"
   request("https://graph.facebook.com/v2.6/"+senderID+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD", function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log('first_name', body.first_name);
+      // console.log('first_name', body.first_name);
       var bodyObj = JSON.parse(body);
       console.log('parsed body', bodyObj.first_name);
-      userMessage = 'Thanks '+body.first_name+' '+body.last_name;
+      // userMessage = 'Thanks '+body.first_name+' '+body.last_name;
     } else {
       console.error("Unable to get user info.");
       console.error(response);
@@ -270,7 +270,7 @@ function receivedPostback(event) {
     }
     // When a postback is called, we'll send a message back to the sender to
     // let them know it was successful
-    sendTextMessage(senderID, userMessage);
+    // sendTextMessage(senderID, userMessage);
   })
 
   // The 'payload' param is a developer-defined field which is set in a postback
