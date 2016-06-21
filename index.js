@@ -256,20 +256,26 @@ function receivedPostback(event) {
   var timeOfPostback = event.timestamp;
 
   // get user info
-  // curl -X GET "https://graph.facebook.com/v2.6/<USER_ID>?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=<PAGE_ACCESS_TOKEN>"
-  request({
-    uri: 'https://graph.facebook.com/v2.6/'+senderID,
-    qs: {access_token:app.get('page_access_token'), fields: 'first_name,last_name,profile_pic'},
-    method: 'POST'
-  }, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log(body);
-    } else {
-      console.error("Unable to receive user info.");
-      console.error(response);
-      console.error(error);
-    }
-  });
+  // curl -X GET "https://graph.facebook.com/v2.6/1126371067434557?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD"
+  // request({
+  //   uri: 'https://graph.facebook.com/v2.6/'+senderID+'/',
+  //   qs: {access_token:app.get('page_access_token'), fields: 'first_name,last_name,profile_pic'},
+  //   method: 'POST'
+  // }, function (error, response, body) {
+  //   if (!error && response.statusCode == 200) {
+  //     console.log(body);
+  //   } else {
+  //     console.error("Unable to receive user info.");
+  //     console.error(response);
+  //     console.error(error);
+  //   }
+  // });
+  request
+    .get("https://graph.facebook.com/v2.6/"+senderID+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAANw0HcRbFIBAOojD5sMhbyicq9RBgDR16qhYQx0sF4QFvB479TwVDWtsCDtZCo3rZBJIZCmrsMLzZBdt5TnpnpdP5s0A7H34hv0N4LsxE8ZCDxjfsFVOmetImB5K5sUZAgkJFRMYJh0FZBqD7ElCqKbvBWI93EqgUMATkqXZCaJegZDZD")
+    .on('response', function(response) {
+      // console.log(response.statusCode);
+      console.log(response);
+    })
 
   // The 'payload' param is a developer-defined field which is set in a postback
   // button for Structured Messages.
