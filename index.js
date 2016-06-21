@@ -258,7 +258,7 @@ function receivedPostback(event) {
   // get user info
   // curl -X GET "https://graph.facebook.com/v2.6/<USER_ID>?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=<PAGE_ACCESS_TOKEN>"
   request({
-    uri: 'https://graph.facebook.com/v2.6/me/messages',
+    uri: 'https://graph.facebook.com/v2.6/'+senderID,
     qs: {access_token:app.get('page_access_token'), fields: 'first_name,last_name,profile_pic'},
     method: 'POST'
   }, function (error, response, body) {
